@@ -10,7 +10,7 @@ iptxt="$dir""/ip.txt"
 
 #获取ipv6地址
 
-ip=$(ip -6 addr list scope global $device | grep -v " fd" | sed -n 's/.*inet6 \([0-9a-f:]\+\).*/\1/p' | head -n 1)
+ip=$(ip address | grep 'global dynamic' | head -n 1 | cut -d / -f 1 | cut -c 11-)
 
 if  [ "${ip:-none}" == "none" ] 
   
@@ -22,6 +22,8 @@ then
 
   exit 12
 
+else
+  echo "获取当前IPv6地址成功=>${ip}"
 fi
 
 
@@ -55,9 +57,12 @@ fi
 
 echo $ip > $iptxt
 
-#更新动态域名ip地址，XXX.noip.cn为你申请的域名，后面的XXX为密码
+#更新动态域名ip地址
 
-url="http://ipv6.meibu.com/?name=XXX.noip.cn&pwd=XXX&ipv6=${ip}"
+echo -p "输入你欲绑定ip的域名：" domain
+
+
+url="http://ipv6.meibu.com/?name=${domain}&pwd=XXX&ipv6=${ip}"
 
 re=`curl -s $url`
 
