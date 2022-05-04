@@ -7,7 +7,7 @@ Remote connection to PC via IPv6, automatically update IPv6 address .
 
 This repository is built for people who need to connect remote PCs via `Remote Desktop`[an app developed bty Microsoft]. However, problems tend to happen which force us to establish a connect on public IP address. :(
 
-Don't worry! This repository is aimed to handle this tragedy! It will automatical band your remote-PC's address to your private domain, though the ipv6-address is dynamic!
+Don't worry! This repository is aimed to handle this tragedy! It will automatical bind your remote-PC's address to your private domain, though the ipv6-address is dynamic!
 
 Follow the steps bellow and enjoy yourself!
 
