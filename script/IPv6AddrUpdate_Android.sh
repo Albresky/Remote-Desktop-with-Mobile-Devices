@@ -59,9 +59,9 @@ echo $ip > $iptxt
 
 #更新动态域名ip地址
 
-echo -p "输入你欲绑定ip的域名：" domain
+echo -p "输入你欲绑定ip的域名：" $domain
 
-echo -p "输入你欲绑定ip的域名：" passwd
+echo -p "输入你欲绑定ip的域名：" $passwd
 
 url="http://ipv6.meibu.com/?name=${domain}&pwd=${passwd}&ipv6=${ip}"
 
