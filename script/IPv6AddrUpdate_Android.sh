@@ -61,8 +61,9 @@ echo $ip > $iptxt
 
 echo -p "输入你欲绑定ip的域名：" domain
 
+echo -p "输入你欲绑定ip的域名：" passwd
 
-url="http://ipv6.meibu.com/?name=${domain}&pwd=XXX&ipv6=${ip}"
+url="http://ipv6.meibu.com/?name=${domain}&pwd=${passwd}&ipv6=${ip}"
 
 re=`curl -s $url`
 
